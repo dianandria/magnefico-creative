@@ -22,5 +22,1502 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+/* CUSTOM CSS */
+@theme {
+  --color-clifford: #da373d;
+  --font-averta: 'Averta-Regular';
+
+  /* Change 10s to whatever speed you want. Lower = faster */
+  --animate-marquee: marquee 20s linear infinite;
+  
+  /* If you haven't defined the keyframes yet, they go here too: */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
+/* Our Work */
+/* Style Lengkungan Gambar Featured Works */
+.custom-rounded-image {
+  border-radius: 3rem 0 3rem 0;
+}
+@media (min-width: 768px) {
+  .custom-rounded-image {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animasi Underline (Penting untuk Menu Overlay) */
+@keyframes loopUnderline {
+  0% { width: 0; opacity: 1; } 
+  40% { width: 100%; opacity: 1; } 
+  70% { width: 100%; opacity: 1; } 
+  80% { width: 100%; opacity: 0; } 
+  100% { width: 0; opacity: 0; } 
+}
+
+.animate-loop-bar {
+  animation: loopUnderline 3s ease-out infinite;
+}
+
+.custom-rounded-image {
+  border-radius: 3rem 0 3rem 0;
+}
+@media (min-width: 768px) {
+  .custom-rounded-image {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+/* Hero BG tetap Full Width */
+.hero-bg {
+  background-image: url("/web-v2/assets/image/home-bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.navbar-bg-image {
+  background-image: url("/web-v2/assets/image/home-bg.png");
+  background-size: cover;
+  background-position: center top;
+  box-shadow: 0 4px 6px -1px rgba(3, 34, 208, 0.5);
+}
+@font-face {
+  font-family: "Averta-Bold";
+  src: url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/c36a75c5ada59665e225bbf5e38efd34.svg#Averta-Bold")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Averta Demo PE Regular";
+  src: url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/3114dbb517b7c67b80e322545c5f565f.svg#Averta Demo PE Regular")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Averta-Regular";
+  src: url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.eot");
+  src:
+    url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/150037e11f159dca84bc4c04549094b6.svg#Averta-Regular")
+      format("svg");
+}
+.container-box {
+    width: 100%;
+    max-width: 1200px;     /* Batas maksimal lebar */
+    margin-left: auto;     /* Rata tengah kiri */
+    margin-right: auto;    /* Rata tengah kanan */
+    padding-left: 20px;    /* Padding kiri */
+    padding-right: 20px;   /* Padding kanan */
+}
+
+/* Pastikan section background tetap full width, tapi isinya ngikutin container-box */
+.section-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.menu-title {
+  font-family: "Averta-Bold";
+  font-size: 16px;
+  font-weight: 400;
+}
+.menu-title.active {
+  color: #f3723b;
+}
+
+.hero-bg {
+  background-image: url("/web-v2/assets/image/home-bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.hero-heading {
+  font-family: "Averta-Bold";
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.hero-heading2 {
+  font-family: "Averta-Bold";
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 450px;
+}
+.hero-heading22 {
+  font-family: "Averta-Bold";
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 450px;
+  line-height: 2;
+}
+.hero-heading3 {
+  font-family: "Averta-Bold";
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 1000px;
+  padding-top:50px;
+  padding-left:200px;
+}
+.hero-heading4 {
+  font-family: "Averta-Bold";
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 1000px;
+  padding-top:50px;
+  padding-left:5px;
+}
+.hero-heading5 {
+  font-family: "Averta-Bold";
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 600px;
+  padding-top:50px;
+  padding-left:5px;
+}
+.hero-heading6 {
+  font-family: "Averta-Bold";
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 600px;
+  padding-top:150px;
+  padding-left:5px;
+  letter-spacing:10px;
+}
+.hero-heading7 {
+  font-family: "Averta-Bold";
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 600px;
+  padding-top: 150px;
+  padding-left:5px;
+  letter-spacing:5px;
+}
+.hero-heading77 {
+  font-family: "Averta-Bold";
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 600px;
+  padding-top: 60px;
+  padding-left:5px;
+  letter-spacing:5px;
+}
+.hero-heading8 {
+  font-family: "Averta-Bold";
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 400px;
+  padding-top:50px;
+  letter-spacing:1px;
+}
+.hero-heading9 {
+  font-family: "Averta-Bold";
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding-top:70px;
+  padding-left:5px;
+  letter-spacing:5px;
+  max-width: 800px;
+}
+.hero-heading10 {
+  font-family: "Averta-Bold";
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 600px;
+  letter-spacing:10px;
+}
+.hero-heading11{
+  font-family: "Averta-Bold";
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 200px;
+  padding-left:5px;
+  letter-spacing:10px;
+}
+.hero-heading12{
+  font-family: "Averta-Bold";
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  max-width: 200px;
+  padding-left:150px;
+  letter-spacing:10px;
+}
+.hero-sub-heading {
+  font-size: 18px;
+  color: #ffffff;
+  max-width: 430px;
+}
+.hero-sub-heading1 {
+  font-size: 20px;
+  color: #ffffff;
+  max-width: 550px;
+}
+.hero-sub-heading2 {
+  font-size: 20px;
+  color: #ffffff;
+  max-width: 800px;
+}
+.hero-sub-heading3 {
+  font-size: 16px;
+  color: #ffffff;
+  padding-left:8px;
+}
+.hero-sub-heading4 {
+  font-size: 26px;
+  color: #ffffff;
+  max-width: 400px;
+  letter-spacing: 1px;
+}
+.hero-sub-heading5 {
+  font-family: "Averta-Regular";
+  font-size: 18px;
+  color: #ffffff;
+  max-width: 400px;
+  letter-spacing: 1px;
+  padding-top:10px;
+  padding-left:5px;
+}
+.hero-sub-heading6 {
+  font-family: "Averta-Regular";
+  font-size: 18px;
+  color: #ffffff;
+  max-width: 400px;
+  letter-spacing: 1px;
+  padding-left:155px;
+  padding-top:10px;
+}
+.hero-btn {
+  background: transparent;
+  border: 2px solid #ff6f0f;
+  border-radius: 15px;
+  font-family: "Averta-Regular";
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.hero-btn2 {
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  font-family: "Averta-Regular";
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.video-heading {
+  font-family: "Averta-Bold";
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-align: justify;
+}
+.section-sub-heading {
+  font-family: "Averta Demo PE Regular";
+  font-size: 20px;
+  text-align: center;
+}
+.navbar-bg-image {
+  background-image: url("/web-v2/assets/image/home-bg.png");
+  background-size: cover;
+  background-position: center top;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+.carousel {
+  margin: 100px auto;
+  width: 90%;
+  display: flex; /* Supaya kedua grup berjejer ke samping */
+  overflow: hidden; /* PENTING: Biar logo yang "keluar" layar disembunyikan */
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  ); /* Opsional: Biar pinggirnya agak nge-fade (keren buat sponsor) */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.group1 {
+  display: flex;
+  align-items: center;
+  gap: 5rem; /* Jarak antar logo, sesuaikan selera */
+  padding-right: 6rem; /* Samakan dengan gap biar looping-nya mulus */
+  animation: spin 15s linear infinite; /* Waktu animasi (makin kecil makin ngebut) */
+  flex-shrink: 0; /* PENTING: Biar grupnya ga kegencet (tetap lebar aslinya) */
+  min-width: 100%; /* Pastikan grup memenuhi minimal 100% lebar container */
+}
+
+.card {
+  /* Hapus font-size: 3rem; karena kita ga mainan text */
+  height: 100px; /* Tentukan tinggi area logo biar seragam */
+  width: 100px; /* Tentukan lebar area logo (opsional, bisa auto aja) */
+  display: flex; /* Biar gambar di tengah card */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tambahan styling khusus untuk Image-nya */
+.card img {
+  max-height: 100%; /* Gambar ga akan lebih tinggi dari card */
+  max-width: 100%; /* Gambar ga akan lebih lebar dari card */
+  object-fit: contain; /* PENTING: Biar logo ga gepeng/terdistorsi */
+
+  /* Opsional: Biar logo jadi hitam putih, pas di-hover baru berwarna */
+  /* filter: grayscale(100%); */
+  /* transition: filter 0.3s; */
+}
+
+/* Opsional: Efek hover */
+/* .card img:hover {
+    filter: grayscale(0%);
+} */
+
+@keyframes spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+/* --- Featured Works Slider Fix --- */
+
+/* Slide Aktif: Muncul paling depan */
+.slide-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.slide-item:not(.active) {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+.arch-mask {
+  border-top-left-radius: 50% 20%;
+  border-top-right-radius: 50% 20%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  position: relative;
+  /* Background default biar ga bolong pas transisi */
+  background-color: #1f2937;
+}
+
+/* Di layar laptop/PC, lengkungannya lebih tinggi */
+@media (min-width: 768px) {
+  .arch-mask {
+    border-top-left-radius: 18rem;
+    border-top-right-radius: 18rem;
+  }
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide img {
+  width: 360px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 180px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* STATES */
+.slide.active {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+}
+
+.slide.next {
+  transform: translateX(140px) scale(0.9);
+  opacity: 0.6;
+  filter: blur(2px);
+  z-index: 2;
+}
+
+.slide.prev {
+  transform: translateX(-140px) scale(0.85);
+  opacity: 0.4;
+  filter: blur(3px);
+  z-index: 1;
+}
+/* --- 1. BENTUK KOTAK TUMPUL (SQUIRCLE) --- */
+/* Ini menggantikan .arch-shape yang lama */
+.custom-shape {
+  border-radius: 40px; /* Lengkungan sudut yang pas (sesuai referensi Juno) */
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); /* Shadow halus */
+}
+
+/* --- 2. LOGIKA SLIDER 3D (STACKING) --- */
+.featured-slider {
+  perspective: 1500px; /* Memberi kesan kedalaman 3D */
+  overflow: hidden; /* Mencegah scrollbar horizontal */
+}
+
+.slide-item {
+  position: absolute;
+  inset: 0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Animasi smooth */
+  opacity: 0;
+  transform-origin: center center;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* POSISI: ACTIVE (Tengah, Jelas, Paling Depan) */
+.slide-item.active {
+  opacity: 1;
+  z-index: 20;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+}
+
+/* POSISI: NEXT (Geser Kanan, Redup, Di Belakang) */
+.slide-item.next {
+  opacity: 0.3;
+  z-index: 10;
+  transform: translateX(50%) scale(0.85); /* Geser kanan & kecilin */
+}
+
+/* POSISI: PREV (Geser Kiri, Redup, Di Belakang) */
+.slide-item.prev {
+  opacity: 0.3;
+  z-index: 10;
+  transform: translateX(-50%) scale(0.85); /* Geser kiri & kecilin */
+}
+/* Tambahkan ini agar user tahu logonya bisa di-klik/grab */
+.carousel img {
+  cursor: grab;
+  /* Opsional: tambahkan efek hover sedikit */
+  transition: transform 0.2s;
+}
+.carousel img:hover {
+  transform: scale(1.1); /* Membesar sedikit saat di hover */
+}
+
+/* Class yang akan kita pakai nanti saat sedang drag */
+.grabbing {
+  cursor: grabbing !important;
+}
+/* Animasi Garis Scroll */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollDown 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+/* --- ANIMASI GARIS LOOPING --- */
+@keyframes loopLineAnim {
+  0% { width: 0; left: 0; }
+  50% { width: 100%; left: 0; }
+  51% { width: 100%; left: auto; right: 0; } /* Pindah anchor ke kanan */
+  100% { width: 0; left: auto; right: 0; }
+}
+
+.animate-loop-underline {
+  position: absolute;
+  bottom: -8px; /* Jarak garis dari teks */
+  left: 0;
+  height: 3px; /* Ketebalan garis */
+  background-color: #f3723b; /* Warna Oren */
+  animation: loopLineAnim 2.5s cubic-bezier(0.65, 0, 0.35, 1) infinite; /* Loop selamanya */
+}
+
+/* Class Helper untuk Menu Fade */
+.menu-fade-enter {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.menu-item-show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* =========================================
+   SERVICES PAGE STYLES
+   ========================================= */
+
+/* Header Section Kategori (CREATIVE, DEVELOPMENT, dll) */
+.service-category-header {
+  color: #f3723b;
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: 'Averta-Bold', sans-serif;
+  margin-bottom: 3rem;
+}
+
+/* Container Item Service (Baris per item) */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* gap-10 */
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .service-item {
+    flex-direction: row;
+    gap: 5rem; /* md:gap-20 */
+  }
+}
+
+/* Kolom Teks (Kiri) */
+.service-text-col {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .service-text-col {
+    width: 50%;
+  }
+}
+
+/* Judul Service (Visual Identity, Website Design, dll) */
+.service-title {
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: 'Averta-Bold', sans-serif;
+}
+
+/* Deskripsi Service */
+.service-desc {
+  color: #9ca3af; /* text-gray-400 */
+  line-height: 1.625;
+  margin-bottom: 2rem;
+  max-width: 28rem; /* max-w-md */
+}
+
+/* Grid Tags (Logo Design, SEO, dll) */
+.service-tags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 1rem;
+  font-size: 0.875rem; /* text-sm */
+  color: #d1d5db; /* text-gray-300 */
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+/* Kolom Gambar (Kanan) */
+.service-image-col {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .service-image-col {
+    width: 50%;
+  }
+}
+
+/* Card Pembungkus Gambar */
+.service-card {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  background-color: #151a21;
+  border-radius: 1.5rem; /* rounded-3xl */
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gambar di dalam Card */
+.service-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: transform 700ms ease-in-out, opacity 700ms;
+}
+
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* CTA Section (Ready to elevate...) */
+.cta-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #0e141b;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16rem;
+  height: 16rem;
+  background-color: rgba(243, 114, 59, 0.1);
+  border-radius: 9999px;
+  filter: blur(64px);
+  transform: translate(50%, -50%);
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: #f3723b;
+  color: white;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 300ms;
+}
+
+.cta-btn:hover {
+  background-color: #ea580c;
+  box-shadow: 0 0 20px rgba(243, 114, 59, 0.5);
+  transform: translateY(-0.25rem);
+}
+/* =========================================
+   CONTACT PAGE STYLES
+   ========================================= */
+
+/* Form Input Styling (Material Design Style) */
+.form-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #374151; /* Warna garis default (abu-abu gelap) */
+    padding: 10px 0;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Garis berubah warna pas diklik */
+.form-input:focus {
+    border-bottom-color: #f3723b;
+}
+
+/* Floating Label Logic */
+.form-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #9ca3af; /* Abu-abu teks */
+    font-size: 1rem;
+    pointer-events: none; /* Biar bisa klik input di balik label */
+    transition: all 0.3s ease;
+}
+
+/* Pas input difokus atau ada isinya, label naik ke atas */
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+    top: -14px;
+    font-size: 0.75rem; /* text-xs */
+    color: #6b7280;
+}
+
+/* Fix untuk Autocomplete browser biar background ga jadi putih */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus,
+.form-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #0b1015 inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+@layer utilities {
+  .container-box {
+    /* Lebar maksimal biar rapi di layar gede, margin auto biar tengah, padding biar gak nempel pinggir */
+    width: 100%;
+    max-width: 1280px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem; /* 24px */
+    padding-right: 1.5rem;
+  }
+}
+.font-custom-system {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+/* WORK PAGE CSS */
+.opac-bg { background-color: #101727; transition: all 300ms ease-in-out; }
+.btn-filter-tab { padding: 0.5rem 1.5rem; font-size: 0.75rem; font-weight: 700; color: white; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s; text-transform: uppercase; }
+.btn-filter-tab:hover, .btn-filter-tab.active { background-color: #f3723b; border-color: #f3723b; }
+
+/* FOOTER */
+.footer-wrapper { background-color: #111827; color: #9ca3af; padding-top: 4rem; padding-bottom: 4rem; margin-top: auto; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.footer-title { 
+  font-size: 1.875rem !important; 
+  font-weight: 600 !important; 
+  color: #ff6f0f !important; 
+  margin-bottom: 5px !important; /* FIX: Margin H2 diganti 5px */
+  font-family: 'Averta-Bold', sans-serif !important; 
+}
+.footer-heading {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #6b7280 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 1.5rem !important;
+}
+.footer-link {
+  font-size: 0.875rem;
+  transition: color 0.3s;
+  color: #9ca3af;
+}
+.footer-link:hover {
+  color: #fff;
+}
+.footer-link.text-white {
+  color: #fff !important;
+}
+/* =========================================
+   8. INSIGHTS / ARTICLES
+   ========================================= */
+.hero-cursor-label { background-color: white; color: black; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.5rem; border-radius: 9999px; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+.mobile-filter-select { display: block; width: 100%; border-radius: 0.375rem; border: 1px solid #374151; background-color: #1f2937; color: white; padding: 0.75rem 1rem; outline: none; transition: border-color 0.3s; }
+.mobile-filter-select:focus { border-color: #f3723b; box-shadow: 0 0 0 2px rgba(243, 114, 59, 0.2); }
+.btn-filter-tab { padding: 0.5rem 1.5rem; font-size: 0.75rem; font-weight: 700; color: white; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s; text-transform: uppercase; }
+.btn-filter-tab:hover, .btn-filter-tab.active { background-color: #f3723b; border-color: #f3723b; }
+.article-card { cursor: pointer; height: 100%; }
+.article-card:hover .card-img { opacity: 1; transform: scale(1.05); }
+.card-img-wrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 0.5rem; margin-bottom: 1.5rem; background-color: #1f2937; flex-shrink: 0; }
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms ease-out, opacity 300ms; opacity: 0.9; }
+.card-content { display: flex; flex-direction: column; align-items: flex-start; flex: 1 1 0%; width: 100%; }
+.card-category-text { font-size: 0.75rem; font-weight: 700; color: #f3723b; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.card-title { font-family: 'Averta-Bold', sans-serif; font-size: 1.5rem; line-height: 1.375; margin-bottom: 1.5rem; transition: color 0.3s; }
+.article-card:hover .card-title { color: #f3723b; }
+.btn-read-more { margin-top: auto; padding: 0.75rem 1.5rem; font-size: 0.75rem; font-weight: 700; border: 1px solid white; border-radius: 9999px; color: white; transition: all 0.3s; text-transform: uppercase; }
+.btn-read-more:hover { background-color: #f3723b; border-color: #f3723b; }
+
+.article-content h2 { font-family: "Averta-Bold", sans-serif; font-size: 1.875rem; margin-top: 3rem; margin-bottom: 1rem; color: white; }
+.article-content h3 { font-family: "Averta-Bold", sans-serif; font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; color: white; }
+.article-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #d1d5db; font-size: 1.125rem; }
+.article-content ul, .article-content ol { margin-bottom: 1.5rem; padding-left: 1.5rem; color: #d1d5db; list-style-type: disc; }
+.article-content li { margin-bottom: 0.5rem; line-height: 1.7; }
+.menu-item { position: relative; display: inline-block; }
+.btn-back { display: inline-flex; align-items: center; gap: 0.75rem; color: #9ca3af; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+.btn-back:hover { color: #f3723b; }
+.btn-back-icon { padding: 0.5rem; border: 1px solid #374151; border-radius: 9999px; transition: border-color 0.3s; }
+.btn-back:hover .btn-back-icon { border-color: #f3723b; }
+.article-tag { display: inline-block; padding: 0.375rem 1rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: white; }
+.article-hero-title { font-family: 'Averta-Bold', sans-serif; font-size: 2.25rem; line-height: 1.25; margin-bottom: 2rem; }
+@media (min-width: 768px) { .article-hero-title { font-size: 3rem; } }
+@media (min-width: 1024px) { .article-hero-title { font-size: 3.75rem; } }
+.meta-label { display: block; font-size: 10px; color: #6b7280; margin-bottom: 0.25rem; }
+.article-quote { margin: 3rem 0; padding: 2rem; background-color: #111827; border-left: 4px solid #f3723b; border-radius: 0 0.75rem 0.75rem 0; }
+.article-quote-text { font-style: italic; color: white; margin-bottom: 0 !important; }
+.next-read-label { display: block; font-size: 0.75rem; font-weight: 700; color: #6b7280; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+.next-read-title { font-family: 'Averta-Bold', sans-serif; font-size: 1.5rem; color: white; margin-bottom: 1.5rem; transition: color 0.3s; cursor: pointer; }
+@media (min-width: 768px) { .next-read-title { font-size: 1.875rem; } }
+.next-read-title:hover { color: #f3723b; }
+.btn-outline-secondary { display: inline-block; padding: 0.75rem 2rem; border: 1px solid white; border-radius: 9999px; color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
+.btn-outline-secondary:hover { background-color: white; color: black; }
+
+/* ABOUT PAGE */
+/* Animasi Loop Bar untuk teks About */
+.animate-loop-bar {
+  animation: loop-bar-anim 3s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes loop-bar-anim {
+  0% {
+    left: 0;
+    right: auto;
+    width: 0%;
+  }
+  40%, 60% {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+  60.1% {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  100% {
+    left: auto;
+    right: 0;
+    width: 0%;
+  }
+}
+
+/* Animasi Scroll Line vertikal */
+.animate-scroll-line {
+  animation: scroll-down-anim 2s ease-in-out infinite;
+}
+
+@keyframes scroll-down-anim {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    /* Angka 200% memastikan garis oranye benar-benar hilang ke bawah sebelum diulang ke atas */
+    transform: translateY(200%); 
+  }
+}
+
+.about-hero-content { position: relative; z-index: 10; text-align: center; overflow: hidden; width: 100%; }
+.about-hero-title { width: 100%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; letter-spacing: -0.025em; color: white; line-height: 1.25; padding: 0 1rem; }
+
+/* FIX: Teks About di Mobile biar ngga nabrak garis bawah */
+.about-hero-span { position: relative; display: inline-block; padding: 0.25rem 0; font-family: 'Averta-Bold', sans-serif; font-size: 2.25rem; line-height: 1.1; }
+@media (min-width: 768px) { .about-hero-span { font-size: 2.75rem; padding: 0.5rem 0; } }
+@media (min-width: 1024px) { .about-hero-span { font-size: 50px; letter-spacing: 1px; } }
+
+.about-hero-desc { color: #e5e7eb; margin: 1.5rem auto 2.5rem; line-height: 1.625; font-size: 1rem; max-width: 550px; font-family: 'Averta-Regular', sans-serif; }
+@media (min-width: 768px) { .about-hero-desc { font-size: 1.125rem; } }
+
+/* FIX: Scroll About Mobile jadi relative dan ngga maksa turun */
+.about-scroll-box { 
+    position: relative; 
+    margin: 2rem auto; /* Jarak aman atas bawah */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem; 
+    opacity: 0.7; 
+    z-index: 20;
+}
+.about-scroll-text { font-size: 0.75rem; letter-spacing: 0.2em; font-weight: 300; color: white; text-transform: uppercase; }
+.about-scroll-line-bg { height: 2.5rem; width: 1px; background-color: rgba(255, 255, 255, 0.2); position: relative; overflow: hidden; }
+.about-scroll-line-active { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #f3723b; }
+
+/* FIX: Judul About Intro dikecilin dikit di mobile biar napasnya enak */
+.about-intro-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 2rem; align-items: flex-end; }
+@media (min-width: 1024px) { .about-intro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5rem; } }
+.about-intro-left { text-align: left; margin-top: -1rem; }
+.about-intro-heading { color: white; font-family: 'Averta-Bold', sans-serif; font-size: 1.25rem; line-height: 1.4; }
+@media (min-width: 768px) { .about-intro-heading { font-size: 1.75rem; } }
+@media (min-width: 1024px) { .about-intro-heading { font-size: 2.25rem; line-height: 1.3; } }
+
+.about-intro-right { text-align: left; padding-left: 0; }
+@media (min-width: 1024px) { .about-intro-right { padding-left: 3rem; } }
+.about-intro-text { color: white; line-height: 1.625; font-family: 'Averta-Regular', sans-serif; max-width: 28rem; margin-left: auto; font-size: 1rem; }
+@media (min-width: 768px) { .about-intro-text { font-size: 1.125rem; } }
+@media (min-width: 1024px) { .about-intro-text { font-size: 1.25rem; margin-left: 0; } }
+
+.about-team-section { padding-top: 8rem; padding-bottom: 8rem; background-color: #0b1015; border-top: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; }
+.about-team-header-box { margin-bottom: 8.75rem; text-align: center; }
+.about-team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items: center; }
+@media (min-width: 768px) { .about-team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; } }
+.about-team-card { position: relative; overflow: hidden; height: 300px; transition: all 500ms; }
+@media (min-width: 768px) { .about-team-card { height: 450px; } }
+.about-team-card.up { transform: translateY(-2rem); }
+.about-team-card.down { transform: translateY(2rem); }
+@media (min-width: 768px) { .about-team-card.up { transform: translateY(-3rem); } .about-team-card.down { transform: translateY(3rem); } }
+.about-team-card:hover { z-index: 10; }
+.about-team-card.up:hover { transform: translateY(-2rem) scale(1.05); }
+.about-team-card.down:hover { transform: translateY(2rem) scale(1.05); }
+@media (min-width: 768px) { .about-team-card.up:hover { transform: translateY(-3rem) scale(1.05); } .about-team-card.down:hover { transform: translateY(3rem) scale(1.05); } }
+.about-team-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 700ms ease-out; }
+.about-team-card:hover .about-team-img { filter: grayscale(0); }
+.about-team-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0; transition: opacity 300ms; display: flex; align-items: flex-end; padding: 1.5rem; }
+.about-team-card:hover .about-team-overlay { opacity: 1; }
+.about-team-role { color: white; font-weight: 700; letter-spacing: 0.025em; }
+
+.about-mission-section { position: relative; padding-top: 6rem; padding-bottom: 6rem; overflow: hidden; background-color: #0b1015; }
+@media (min-width: 768px) { .about-mission-section { padding-top: 10rem; padding-bottom: 10rem; } }
+.about-mission-bg-wrap { position: absolute; inset: 0; z-index: 0; }
+.about-mission-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.about-mission-gradient { position: absolute; inset: 0; background: linear-gradient(to right, #0b1015, rgba(11, 16, 21, 0.8), transparent); }
+.about-mission-content-wrap { position: relative; z-index: 10; padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 768px) { .about-mission-content-wrap { padding-left: 1.5rem; padding-right: 1.5rem; } }
+.about-mission-box { max-width: 48rem; }
+
+/* FIX: Teks "A goal-oriented team..." dikecilin biar rapi */
+.about-mission-title { font-weight: 700; color: white; line-height: 1.25; margin-bottom: 2rem; font-family: 'Averta-Bold', sans-serif; font-size: 1.875rem; }
+@media (min-width: 768px) { .about-mission-title { font-size: 2rem; } }
+@media (min-width: 1024px) { .about-mission-title { font-size: 2.75rem; } } /* Aslinya 3.75rem, turunin ke 2.75rem */
+
+.about-mission-desc { color: #d1d5db; font-family: 'Averta-Regular', sans-serif; line-height: 1.625; max-width: 42rem; font-size: 1.125rem; }
+@media (min-width: 768px) { .about-mission-desc { font-size: 1.25rem; } }
+
+.about-cta-section { padding-top: 6rem; padding-bottom: 6rem; background-color: #111827; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.about-cta-wrap { padding-left: 1rem; padding-right: 1rem; }
+@media (min-width: 768px) { .about-cta-wrap { padding-left: 1.5rem; padding-right: 1.5rem; } }
+.about-cta-box { margin-bottom: 3rem; }
+.about-cta-title { color: #ff6f0f; font-weight: 700; font-family: 'Averta-Bold', sans-serif; margin-bottom: 0.5rem; line-height: 1.25; font-size: 1.875rem; }
+@media (min-width: 768px) { .about-cta-title { font-size: 3rem; } }
+.about-cta-desc { color: white; font-family: 'Averta-Regular', sans-serif; max-width: 36rem; margin-top: 1rem; line-height: 1.625; font-size: 1rem; }
+@media (min-width: 768px) { .about-cta-desc { font-size: 1.125rem; } }
+
+/* =========================================
+   3. TYPOGRAPHY
+   ========================================= */
+.hero-heading { font-family: "Averta-Bold"; font-size: 50px; font-weight: 400; letter-spacing: 1px; }
+.hero-heading5 { font-family: "Averta-Bold"; font-size: 42px; font-weight: 400; letter-spacing: 1px; max-width: 600px; padding-top: 50px; padding-left: 5px; }
+.hero-heading6 { font-family: "Averta-Bold"; font-size: 40px; font-weight: 400; letter-spacing: 10px; max-width: 600px; padding-top: 150px; padding-left: 5px; }
+.hero-heading7 { font-family: "Averta-Bold"; font-size: 22px; font-weight: 400; letter-spacing: 5px; max-width: 600px; padding-top: 150px; padding-left: 5px; }
+.hero-heading77 { font-family: "Averta-Bold"; font-size: 24px; font-weight: 400; letter-spacing: 5px; max-width: 600px; padding-top: 60px; padding-left: 5px; }
+.hero-heading9 { font-family: "Averta-Bold"; font-size: 22px; font-weight: 400; letter-spacing: 5px; padding-top: 70px; padding-left: 5px; max-width: 800px; }
+.hero-heading10 { font-family: "Averta-Bold"; font-size: 40px; font-weight: 400; letter-spacing: 10px; max-width: 600px; }
+.hero-sub-heading { font-size: 18px; color: #ffffff; max-width: 430px; }
+.hero-sub-heading2 { font-size: 20px; color: #ffffff; max-width: 800px; }
+.hero-sub-heading3 { font-size: 16px; color: #ffffff; padding-left: 8px; }
+.hero-sub-heading4 { font-size: 26px; color: #ffffff; max-width: 400px; letter-spacing: 1px; }
+.video-heading { font-family: "Averta-Bold"; font-size: 50px; font-weight: 400; letter-spacing: 2px; text-align: justify; }
+.section-sub-heading { font-family: "Averta Demo PE Regular"; font-size: 20px; text-align: center; }
+.section-title { color: #f3723b; font-family: 'Averta-Bold', sans-serif; text-transform: uppercase; letter-spacing: 0.3em; text-align: center; font-size: 1.25rem; }
+@media (min-width: 768px) { .section-title { font-size: 1.5rem; } }
+
+/* =========================================
+   10. GRAIN & MORTAR HORIZONTAL SLIDER STYLES
+   ========================================= */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.works-portfolio-card-v2 {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* 1. LENGKUNGAN GAMBAR DIPERHALUS */
+.works-card-img-wrap-v2 {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.4; /* Dibuat sedikit lebih memanjang/lebar seperti referensi */
+  border-radius: 0.75rem; /* Lengkungan dikurangi biar mirip referensi */
+  overflow: hidden;
+  background-color: #1a1f25;
+}
+
+.works-card-img-v2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.works-portfolio-card-v2:hover .works-card-img-v2 {
+  transform: scale(1.04);
+}
+
+/* 2. LAYOUT META: DIKUMPULIN DI KIRI (FLEX-START) */
+.works-card-meta-v2 {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Kunci biar teks & badge nempel */
+  gap: 0.75rem; /* Jarak antara Judul dan Badge */
+  padding: 0 0.25rem;
+}
+
+/* 3. FONT JUDUL DIKESUAIKAN */
+.works-card-title-v2 {
+  font-family: 'Averta-Regular', sans-serif; /* Pakai reguler biar clean */
+  font-size: 1.25rem; /* Ukuran diperkecil dikit */
+  color: white;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.works-portfolio-card-v2:hover .works-card-title-v2 {
+  color: #f3723b; 
+}
+
+/* 4. BADGE DIUBAH JADI KOTAK SOLID TUMPUL */
+.works-card-badge-v2 {
+  font-size: 0.75rem;
+  font-family: 'Averta-Regular', sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.15); /* Background kotak keabuan/transparan */
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.25rem; /* Ujung kotak sedikit tumpul, BUKAN bulat full */
+  text-transform: capitalize; /* Format teks awal huruf besar, sisa kecil */
+  transition: all 0.3s ease;
+}
+
+.works-portfolio-card-v2:hover .works-card-badge-v2 {
+  background-color: rgba(243, 114, 59, 0.2);
+  color: #f3723b;
+}
+
+@media (min-width: 1024px) {
+  .works-portfolio-card-v2 {
+    cursor: none; 
+  }
+}
+/* =========================================
+   11. HOVER DIMMING EFFECT (EFEK FOKUS)
+   ========================================= */
+
+/* 1. Berikan transisi mulus ke semua item portofolio */
+#portfolio-track .portfolio-item {
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+/* 2. Saat area slider di-hover secara keseluruhan, gelapkan SEMUA gambar */
+#portfolio-track:hover .portfolio-item {
+  filter: brightness(0.3); /* Angka 0.3 bikin gelap. Makin mendekati 0 makin hitam pekat */
+  opacity: 0.6; /* Agak dibikin transparan sedikit biar nyatu sama background */
+}
+
+/* 3. TAPI, kecualikan gambar yang sedang benar-benar ditunjuk oleh kursor (kembalikan ke terang) */
+#portfolio-track .portfolio-item:hover {
+  filter: brightness(1);
+  opacity: 1;
+}
+/* =========================================
+   12. CAPABILITIES GRID HOVER EFFECT
+   ========================================= */
+.cap-card {
+  position: relative;
+  padding: 2.5rem;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Background Jaring-jaring (Grid Pattern) */
+.cap-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px; /* Ukuran kotak jaring-jaring */
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+
+.cap-card:hover .cap-grid-bg {
+  opacity: 1;
+}
+
+.cap-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cap-title {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.4s ease;
+}
+
+.cap-card:hover .cap-title {
+  color: #f3723b;
+}
+
+/* Icon tengah yang geser ke atas */
+.cap-icon {
+  margin: auto;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s;
+}
+
+.cap-card:hover .cap-icon {
+  transform: translateY(-30px) scale(0.9);
+  opacity: 0.3; /* Ikon dibikin agak transparan pas teksnya muncul */
+}
+
+/* Teks deksripsi yang muncul dari bawah */
+.cap-desc-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+.cap-card:hover .cap-desc-box {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =========================================
+   13. ACCORDION (WHY SECTION)
+   ========================================= */
+.acc-content {
+  display: grid;
+  grid-template-rows: 0fr; /* Trik Jitu biar tinggi animasi mulus */
+  opacity: 0;
+  transition: grid-template-rows 0.5s ease, opacity 0.5s ease;
+}
+
+.acc-inner {
+  overflow: hidden;
+}
+
+/* Class bantuan yang ditembak JS */
+.acc-content.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* Putar garis vertikal icon plus jadi minus */
+.acc-v-line.rotate {
+  transform: rotate(90deg);
+}
+
+/* Paksa judul jadi orange kalo lagi kebuka */
+.acc-item.active h3 {
+  color: #f3723b;
+}
+/* =========================================
+   PORTFOLIO ITEM CUSTOM CLASS (ourWorks.html)
+   ========================================= */
+.portfolio-item {
+  transition: all 0.5s ease-in-out;
+  flex-shrink: 0;
+  width: 85vw;
+  max-width: 550px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-item { width: 45vw; }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-item { width: 35vw; }
+}
+
+/* Efek redup saat slider di-hover (Group Hover) */
+#portfolio-track:hover .portfolio-item {
+  filter: brightness(0.3);
+  opacity: 0.6;
+}
+
+/* Efek terang saat item spesifik di-hover */
+#portfolio-track .portfolio-item:hover {
+  filter: brightness(1) !important;
+  opacity: 1 !important;
+}
+/* =========================================
+   WORKS DETAIL PAGE (GRAIN & MORTAR STYLE)
+   ========================================= */
+
+/* Hero Details & Meta Grid */
+.gm-detail-hero { width: 100%; padding: 8rem 1.5rem 4rem; max-width: 1200px; margin: 0 auto; }
+@media (min-width: 768px) { .gm-detail-hero { padding: 10rem 3rem 4rem; } }
+
+.gm-detail-header { margin-bottom: 3rem; }
+.gm-detail-header .hero-heading { font-size: 3rem; margin-bottom: 1rem; }
+@media (min-width: 768px) { .gm-detail-header .hero-heading { font-size: 4.5rem; } }
+
+.gm-detail-subtitle { font-size: 1.125rem; color: #9ca3af; max-width: 42rem; font-family: 'Averta-Regular', sans-serif; }
+@media (min-width: 768px) { .gm-detail-subtitle { font-size: 1.25rem; } }
+
+.gm-detail-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+@media (min-width: 1024px) { 
+    .gm-detail-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 6rem; } 
+    .gm-detail-desc-col { grid-column: span 8 / span 8; }
+    .gm-detail-meta-col { grid-column: span 4 / span 4; }
+}
+
+.gm-detail-desc-text { color: #d1d5db; line-height: 1.625; font-size: 1.125rem; margin-bottom: 2rem; font-family: 'Averta-Regular', sans-serif; }
+
+.gm-btn-visit { display: inline-flex; align-items: center; gap: 0.75rem; color: #f3723b; font-family: 'Averta-Bold', sans-serif; font-size: 0.875rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s, border-color 0.3s; border-bottom: 1px solid #f3723b; padding-bottom: 0.25rem; width: fit-content; }
+.gm-btn-visit:hover { color: white; border-color: white; }
+
+.gm-meta-list { display: flex; flex-direction: column; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.gm-meta-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.gm-meta-label { color: #6b7280; font-family: 'Averta-Bold', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.gm-meta-value { color: white; font-size: 0.875rem; font-family: 'Averta-Bold', sans-serif; }
+.gm-meta-value.highlight { color: #f3723b; }
+
+/* Dynamic Image Gallery Layouts */
+.gm-detail-gallery { width: 100%; display: flex; flex-direction: column; gap: 3rem; padding-bottom: 6rem; }
+@media (min-width: 768px) { .gm-detail-gallery { gap: 6rem; } }
+
+.gm-gallery-full { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 768px) { .gm-gallery-full { padding: 0 2rem; } }
+.gm-gallery-full img { width: 100%; height: auto; object-fit: cover; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.05); }
+
+.gm-gallery-highlight { width: 100%; background-color: #161a23; padding: 4rem 0; }
+@media (min-width: 768px) { .gm-gallery-highlight { padding: 6rem 0; } }
+.gm-gallery-highlight-grid { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
+@media (min-width: 768px) { 
+    .gm-gallery-highlight-grid { flex-direction: row; padding: 0 3rem; } 
+    .gm-gallery-highlight-col { width: 50%; }
+    .gm-gallery-highlight-col.offset { margin-top: 3rem; }
+}
+.gm-gallery-highlight img { width: 100%; height: auto; object-fit: cover; border-radius: 0.5rem; }
+
+.gm-gallery-single { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+.gm-gallery-single img { width: 100%; height: auto; object-fit: cover; border-radius: 0.75rem; }
+
+.gm-gallery-stacked { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
+@media (min-width: 768px) { .gm-gallery-stacked { padding: 0 3rem; } }
+.gm-gallery-stacked img { width: 100%; height: auto; object-fit: cover; border-radius: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.05); }
+
+/* Related Projects Wrapper */
+.gm-related-section { width: 100%; background-color: #0b1015; padding: 6rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.gm-related-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+@media (min-width: 768px) { .gm-related-container { padding: 0 3rem; } }
+.gm-related-title { font-size: 1.5rem; font-family: 'Averta-Bold', sans-serif; color: white; margin-bottom: 3rem; }
+.gm-related-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 768px) { .gm-related-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Pagination Area */
+.gm-pagination-section { width: 100%; background-color: #101727; padding: 4rem 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+@media (min-width: 768px) { .gm-pagination-section { padding: 4rem 3rem; } }
+.gm-pagination-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.gm-page-link { display: flex; flex-direction: column; gap: 0.25rem; text-decoration: none; cursor: pointer; }
+.gm-page-link.right { text-align: right; }
+.gm-page-label { color: #6b7280; font-family: 'Averta-Bold', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; transition: color 0.3s; }
+.gm-page-link:hover .gm-page-label { color: #f3723b; }
+.gm-page-title { color: white; font-family: 'Averta-Regular', sans-serif; font-size: 1.125rem; transition: transform 0.3s; }
+@media (min-width: 768px) { .gm-page-title { font-size: 1.5rem; } }
+.gm-page-link.left:hover .gm-page-title { transform: translateX(-0.5rem); }
+.gm-page-link.right:hover .gm-page-title { transform: translateX(0.5rem); }
+/* =========================================
+   7. WORKS & PORTFOLIO
+   ========================================= */
+.works-portfolio-card { position: relative; height: 280px; border-radius: 1rem; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background-color: #1a1f25; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); cursor: pointer; display: block; }
+.works-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: transform 700ms ease-out, opacity 300ms; }
+.works-portfolio-card:hover .works-card-img { transform: scale(1.1); opacity: 1; }
+.works-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 60%, transparent 100%); opacity: 0; transition: opacity 400ms ease-out; }
+.works-portfolio-card:hover .works-card-overlay { opacity: 1; }
+.works-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; z-index: 10; }
+.works-card-title { color: #f3723b; font-size: 1.125rem; font-weight: 700; font-family: 'Averta-Bold', sans-serif; line-height: 1.25; margin: 0; transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1); transform: translateY(20px); opacity: 0; }
+.works-portfolio-card:hover .works-card-title { transform: translateY(0); opacity: 1; }
+@media (max-width: 767px) { .works-card-overlay, .works-card-title { opacity: 1; transform: translateY(0); } }
+
+.work-detail-hero { display: flex; margin: 0 auto; max-width: 1200px; padding: 8rem 20px 1rem; }
+@media (min-width: 640px) { .work-detail-hero { padding-top: 6rem; padding-bottom: 0.5rem; } }
+@media (min-width: 1024px) { .work-detail-hero { padding-top: 9rem; padding-bottom: 1rem; } }
+.work-detail-meta { margin-top: 2rem; display: flex; flex-wrap: wrap; row-gap: 0.5rem; column-gap: 3rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: white; }
+@media (min-width: 640px) { .work-detail-meta { font-size: 0.875rem; } }
+.work-detail-highlight { color: #f97316; }
+.work-detail-desc { margin-top: 2rem; width: 100%; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; line-height: 1.625; color: white; }
+@media (min-width: 640px) { .work-detail-desc { font-size: 0.875rem; } }
+.work-detail-gallery { margin: 1.25rem auto 12.5rem; max-width: 1200px; padding-left: 20px; padding-right: 20px; }
+.poster-wrapper { position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden; border: 1px solid white; }
+.banner-wrapper { position: relative; width: 100%; height: 16rem; overflow: hidden; border: 1px solid white; }
+@media (min-width: 768px) { .banner-wrapper { height: 24rem; } }
+.gallery-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* NEW */
+.our-works-page {
+  background: #101726;
+  min-height: 100vh;
+  color: #ffffff;
+  padding-top: 0;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  background: #101726;
+  min-height: 170px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 8px;
+}
+
+/* .hero-heading {
+  font-size: 52px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0;
+} */
+
+.btn-filter-tab {
+  height: 38px;
+  padding: 0 25px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-filter-tab.active {
+  background: #ff743d;
+  border-color: #ff743d;
+  color: #ffffff;
+}
+
+.btn-filter-tab:hover {
+  border-color: #ff743d;
+}
+
+.mobile-filter-select {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  background: #101726;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #ffffff;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.works-portfolio-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #18202c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.works-card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.works-portfolio-card:hover .works-card-img {
+  transform: scale(1.06);
+}
+
+.works-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 11, 18, 0.88) 0%,
+    rgba(8, 11, 18, 0.35) 48%,
+    rgba(8, 11, 18, 0.04) 100%
+  );
+  z-index: 1;
+}
+
+.works-card-content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 24px;
+}
+
+.works-card-title {
+  color: #ff743d;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 800;
+  margin: 0;
+}
+.our-works-hero {
+  padding-top: 220px !important;
 }

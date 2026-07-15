@@ -1,65 +1,137 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+// import PartnersMarquee from "@/components/PartnersMarquee";
+import VideoSection from "@/components/VideoSection";
+import FeaturedWorks from "@/components/FeaturedWorks";
+import Expertise from "@/components/Expertise";
+import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
+
+// Interface
+export interface SettingsData {
+  hero_image: string;
+  hero_title: string;
+  hero_subtitle: string;
+  home_video: string;
+  home_video_title: string;
+  cta_title: string;
+  cta_subtitle: string;
+  contact_email: string;
+  footer_copyright: string;
+}
+
+export interface ClientData {
+  id: number;
+  name: string;
+  logo_path: string;
+  is_active: string;
+  sort_order: string;
+  logo_url: string;
+}
+
+export interface PortfolioData {
+  id?: number; // Optional, just in case the API doesn't return an ID
+  title: string;
+  description: string | null;
+  client_name: string;
+  year: string;
+  main_image_url: string;
+  categories: string[];
+  slug: string;
+  is_featured: boolean;
+}
 
 export default function Home() {
+  const [settings, setSettings] = useState<SettingsData | null>(null);
+  const [clients, setClients] = useState<ClientData[]>([]);
+  const [portfolios, setPortfolios] = useState<PortfolioData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL as string;
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY as string;
+
+        if (!baseUrl || !apiKey) {
+          console.warn("API URL atau API Key belum di-set di file .env");
+          return;
+        }
+
+        const headers = {
+          "x-api-key": apiKey,
+          "Content-Type": "application/json",
+        };
+
+        // Fetch settings and clients simultaneously for better performance
+        const [settingsRes, clientsRes, portfoliosRes] = await Promise.all([
+          fetch(`${baseUrl}/settings`, { method: "GET", headers }),
+          fetch(`${baseUrl}/clients`, { method: "GET", headers }),
+          fetch(`${baseUrl}/portfolios?is_featured=1`, { method: "GET", headers })
+        ]);
+
+        const settingsResult = await settingsRes.json();
+        const clientsResult = await clientsRes.json();
+        const portfoliosResult = await portfoliosRes.json();
+
+        // setting
+        if (settingsResult.success) {
+          setSettings(settingsResult.data);
+        }
+        
+        // client
+        if (clientsResult.success) {
+          // Filter to only include active clients if needed, and sort them
+          const activeClients = clientsResult.data
+            .filter((c: ClientData) => c.is_active === "1")
+            .sort((a: ClientData, b: ClientData) => Number(a.sort_order) - Number(b.sort_order));
+            
+          setClients(activeClients);
+        }
+
+        // portfolio
+        if (portfoliosResult.success) {
+          setPortfolios(portfoliosResult.data);
+        }
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Tampilkan PageLoader selama data masih di-fetch
+  if (isLoading) {
+    return <PageLoader />;
+  }
+
+  // Opsional: Jika gagal fetch data, cegah error dengan me-render null atau UI fallback
+  if (!settings) {
+    return null; 
+  }
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <PageLoader />
+      <Navbar />
+      <main
+        id="main-content"
+        className="transition-all duration-700 ease-out min-h-screen"
+      >
+        
+        <Hero data={settings} clients={clients} />
+        {/* <PartnersMarquee /> */}
+        <VideoSection data={settings} />
+        <FeaturedWorks portfolios={portfolios} />
+        <Expertise />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
